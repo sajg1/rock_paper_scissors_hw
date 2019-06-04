@@ -9,9 +9,10 @@ get '/' do
   erb(:home)
 end
 
-get '/play/:hand1/:hand2' do
-  round = RockPaperScissors.new(params[:hand1].to_s, params[:hand2].to_s)
-  return round.play_game()
+get '/:hand1/:hand2' do
+  result = RockPaperScissors.new(params[:hand1].to_s, params[:hand2].to_s)
+  @result = result.play_game()
+  erb(:result)
 end
   # if (params['hand1'].to_s == "rock") && (params['hand2'].to_s == "scissors")
   #   return "Rock beats Scissors!"
