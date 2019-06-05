@@ -10,10 +10,13 @@ class RockPaperScissors
 
   def play_game()
     if
+      @hand1 == @hand2
+      return "It's a draw!"
+    elsif
       (@hand1 == "rock") && (@hand2 == "scissors") || (@hand1 == "scissors") && (@hand2 == "paper") || (@hand1 == "paper") && (@hand2 == "rock")
       return "Player one wins with #{@hand1}!"
-    elsif
-      (@hand1 == "scissors") && (@hand2 == "rock") || (@hand1 == "paper") && (@hand2 == "scissors") || (@hand1 == "rock") && (@hand2 == "paper")
+    else
+      # (@hand1 == "scissors") && (@hand2 == "rock") || (@hand1 == "paper") && (@hand2 == "scissors") || (@hand1 == "rock") && (@hand2 == "paper")
       return "Player two wins with #{@hand2}!"
     end
   end
